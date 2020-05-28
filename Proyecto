@@ -1,0 +1,55 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string line=" ";
+		string[] Producto= new string[7]; 
+		string[] Precio=new string[7];
+		int[] Cantidad=new int[7];
+		
+		for(int y=0; y<7; y++)
+		{	
+			Console.Write("Ingrese el Nombre del producto: ");
+			Producto[y] = Console.ReadLine();
+			Console.Write("Ingrese el precio: ");
+			Precio[y] = Console.ReadLine();
+			Console.Write("Ingrese la Cantidad: ");
+			line=Console.ReadLine();
+			Cantidad[y]=int.Parse(line);
+			
+		}	
+		
+		for(int x=0; x<7; x++)
+		{
+			Console.WriteLine("Producto: "+Producto[x] + "Precio: " +Precio[x] + "Cantidad: " + Cantidad[x]);
+		}
+		
+		Console.WriteLine("Ingresa el Nombre a buscar ");
+		line=Console.ReadLine();
+		
+	    string consulta = "Porducto no encontrado";
+		
+		for(int y=0; y<7; y++)
+		{	
+		
+	      if(Producto[y] == line)
+		  consulta="Producto: "+Producto[y] + "Precio: " +Precio[y] + "Cantidad: " +Cantidad[y];
+	    }
+
+         Console.Write("Ingrese el nombre del producto a borrar: ");
+         line=Console.ReadLine();
+		
+		for(int x=0; x<7; x++)
+		{	
+			if(Producto[x] == line)
+			{
+				Producto[x] = " ";
+				Precio[x] =" ";
+				Cantidad[x] = 00000;
+			}	
+		}
+		Console.Write(consulta);
+	}
+}
